@@ -14,6 +14,9 @@ You will need to complete the two classes that apply rules to calculate a score 
 
 These rules should be configured in via the custom setting detailed above, with the stage rule being executed first.
 
+## Notes
+You must have list custom settings enabled in your target org - navigate to `Setup -> Schema Settings` and enable `Manage list custom settings type` 
+
 ## Testing the Challenge
 
 ### Scratch Org
