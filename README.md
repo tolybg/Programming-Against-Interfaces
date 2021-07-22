@@ -20,7 +20,7 @@ These rules should be configured in via the custom setting detailed above, with 
 If you want to iterate on your development, use a scratch org and the Salesforce CLI force:source:push/pull commands.
 
 ### Developer Edition
-To deploy to a deeloper edition, use the source deploy command :
+To deploy to a developer edition, use the source deploy command :
 `sfdx force:source:deploy -p force-app -w 10 -u <username>`
 
 if you don't want to deploy the code, you can carry out a check deployment and execute the tests to get the results:
