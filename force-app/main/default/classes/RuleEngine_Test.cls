@@ -4,11 +4,11 @@ private with sharing class RuleEngine_Test
     @isTest
     static void CalculateScoreMax_Test()
     {
-        List<Opportunity_Scoring_Rule__c> rules=
-                    new List<Opportunity_Scoring_Rule__c>();
+        List<Opportunity_Score_Rule__c> rules=
+                    new List<Opportunity_Score_Rule__c>();
 
-        rules.add(RuleTestFixtures.GetRule(10, 'OpportunityValueRule'));
-        rules.add(RuleTestFixtures.GetRule(20, 'OpportunityStageRule'));
+        rules.add(RuleTestFixtures.GetRule('Value', 10, 'OpportunityValueRule'));
+        rules.add(RuleTestFixtures.GetRule('Stage', 20, 'OpportunityStageRule'));
         insert rules;
 
         Test.startTest();
@@ -25,11 +25,11 @@ private with sharing class RuleEngine_Test
     @isTest
     static void CalculateScoreMin_Test()
     {
-        List<Opportunity_Scoring_Rule__c> rules=
-                    new List<Opportunity_Scoring_Rule__c>();
+        List<Opportunity_Score_Rule__c> rules=
+                    new List<Opportunity_Score_Rule__c>();
 
-        rules.add(RuleTestFixtures.GetRule(10, 'OpportunityValueRule'));
-        rules.add(RuleTestFixtures.GetRule(20, 'OpportunityStageRule'));
+        rules.add(RuleTestFixtures.GetRule('Value', 10, 'OpportunityValueRule'));
+        rules.add(RuleTestFixtures.GetRule('Stage', 20, 'OpportunityStageRule'));
         insert rules;
 
         Test.startTest();
@@ -46,11 +46,11 @@ private with sharing class RuleEngine_Test
     @isTest
     static void CalculateScoreHighValueEarlyStage_Test()
     {
-        List<Opportunity_Scoring_Rule__c> rules=
-                    new List<Opportunity_Scoring_Rule__c>();
+        List<Opportunity_Score_Rule__c> rules=
+                    new List<Opportunity_Score_Rule__c>();
 
-        rules.add(RuleTestFixtures.GetRule(10, 'OpportunityValueRule'));
-        rules.add(RuleTestFixtures.GetRule(20, 'OpportunityStageRule'));
+        rules.add(RuleTestFixtures.GetRule('Value', 10, 'OpportunityValueRule'));
+        rules.add(RuleTestFixtures.GetRule('Stage', 20, 'OpportunityStageRule'));
         insert rules;
 
         Test.startTest();
@@ -67,11 +67,11 @@ private with sharing class RuleEngine_Test
     @isTest
     static void CalculateScoreLateStageLowValue_Test()
     {
-        List<Opportunity_Scoring_Rule__c> rules=
-                    new List<Opportunity_Scoring_Rule__c>();
+        List<Opportunity_Score_Rule__c> rules=
+                    new List<Opportunity_Score_Rule__c>();
 
-        rules.add(RuleTestFixtures.GetRule(10, 'OpportunityValueRule'));
-        rules.add(RuleTestFixtures.GetRule(20, 'OpportunityStageRule'));
+        rules.add(RuleTestFixtures.GetRule('Value', 10, 'OpportunityValueRule'));
+        rules.add(RuleTestFixtures.GetRule('Stage', 20, 'OpportunityStageRule'));
         insert rules;
 
         Test.startTest();
@@ -88,10 +88,10 @@ private with sharing class RuleEngine_Test
     @isTest
     static void CalculateScoreOnlyValue_Test()
     {
-        List<Opportunity_Scoring_Rule__c> rules=
-                    new List<Opportunity_Scoring_Rule__c>();
+        List<Opportunity_Score_Rule__c> rules=
+                    new List<Opportunity_Score_Rule__c>();
 
-        rules.add(RuleTestFixtures.GetRule(10, 'OpportunityValueRule'));
+        rules.add(RuleTestFixtures.GetRule('Value', 10, 'OpportunityValueRule'));
         insert rules;
 
         Test.startTest();
@@ -108,10 +108,10 @@ private with sharing class RuleEngine_Test
     @isTest
     static void CalculateScoreOnlyStage_Test()
     {
-        List<Opportunity_Scoring_Rule__c> rules=
-                    new List<Opportunity_Scoring_Rule__c>();
+        List<Opportunity_Score_Rule__c> rules=
+                    new List<Opportunity_Score_Rule__c>();
 
-        rules.add(RuleTestFixtures.GetRule(10, 'OpportunityStageRule'));
+        rules.add(RuleTestFixtures.GetRule('Stage', 10, 'OpportunityStageRule'));
         insert rules;
 
         Test.startTest();

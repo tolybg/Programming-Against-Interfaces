@@ -5,7 +5,7 @@
 This challenge checks your knowledge of Programming Against Interfaces.
 
 The concept of this challenge is a rules engine that calculates a score
-for an opportunity via configurable (plug and play) rules.  The rules implement an interface `OpportunityScoringRuleIF` and are defined by instances of the `Opportunity_Scoring_Rule__c` custom setting.
+for an opportunity via configurable (plug and play) rules.  The rules implement an interface `OpportunityScoringRuleIF` and are defined by instances of the `Opportunity_Score_Rule__c` custom setting.
 
 You will need to complete the two classes that apply rules to calculate a score for an opportunity:
 

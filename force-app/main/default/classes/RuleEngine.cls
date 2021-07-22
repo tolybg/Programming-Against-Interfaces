@@ -1,6 +1,6 @@
 public with sharing class RuleEngine 
 {
-    private List<Opportunity_Scoring_Rule__c> oppRuleCfgs;
+    private List<Opportunity_Score_Rule__c> oppRuleCfgs;
     
     public RuleEngine()
     {
@@ -17,7 +17,7 @@ public with sharing class RuleEngine
     public Integer scoreOpportunity(Opportunity opp)
     {
         Integer totalScore=0;
-        for (Opportunity_Scoring_Rule__c oppRuleCfg : oppRuleCfgs)
+        for (Opportunity_Score_Rule__c oppRuleCfg : oppRuleCfgs)
         {
             OpportunityScoringRuleIF oppRule;
             // create the OpportunityScoringRuleIF implementing class
