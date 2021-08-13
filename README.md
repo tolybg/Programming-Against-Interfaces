@@ -1,8 +1,8 @@
-# Programming Against Interfaces Challenge
+# Programming Against Interfaces Plug-In Architecture Challenge
 
 ## About
 
-This challenge checks your knowledge of Programming Against Interfaces.
+This challenge checks your knowledge of Programming Against Interfaces when using a plug-in architecture to configure Apex classes in use at runtime.
 
 The concept of this challenge is a rules engine that calculates a score
 for an opportunity via configurable (plug and play) rules.  The rules implement an interface `OpportunityScoringRuleIF` and are defined by instances of the `Opportunity_Score_Rule__c` custom setting.
