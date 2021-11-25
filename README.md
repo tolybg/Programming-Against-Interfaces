@@ -12,6 +12,8 @@ You will need to complete the two classes that apply rules to calculate a score 
 1. `OpportunityStageRule` - this calculates a score of 10 if the opportunity is Closed Won, otherwise 0
 1. `OpportunityValueRule` - this calculates a score of 10 if the opportunity has a value of 2.5 million or above
 
+You will also need to provide the code to implement the logic described in the comments of the `RuleEngine` class
+
 These rules should be configured in via the custom setting detailed above, with the stage rule being executed first.
 
 ## Notes
