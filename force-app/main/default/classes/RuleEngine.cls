@@ -9,7 +9,7 @@ public with sharing class RuleEngine
 
     private void loadRules()
     {
-        // get the rules from the custom setting and store in the oppRules 
+        // get the rules from the custom setting and store in the oppRuleCfgs 
         // list, ordered by the Index__c field, low to high. 
         // E.g. first entry has index 10, second has index 20 etc
     }
