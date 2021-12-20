@@ -12,7 +12,7 @@
 public with sharing class OpportunityValueRule implements OpportunityScoringRuleIF
 {
     private static final Decimal OPP_AMOUNT_THRESHOLD = 2500000;
-    private static final Integer scoreIncrement = 10;
+    private static final Integer SCORE_INCREMENT = 10;
 
     public Integer calculateScore(Opportunity Opp)
     {
@@ -20,7 +20,7 @@ public with sharing class OpportunityValueRule implements OpportunityScoringRule
 
         if(Opp.Amount >= OPP_AMOUNT_THRESHOLD)
         {
-            score += scoreIncrement;
+            score += SCORE_INCREMENT;
         }
 
         return score;

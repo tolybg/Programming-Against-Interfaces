@@ -13,7 +13,7 @@
 public with sharing class OpportunityStageRule implements OpportunityScoringRuleIF
 {
     private static final String OPP_STAGE_TO_SCORE = 'Closed Won';
-    private static final Integer scoreIncrement = 10;
+    private static final Integer SCORE_INCREMENT = 10;
 
     public Integer calculateScore(Opportunity Opp)
     {
@@ -21,7 +21,7 @@ public with sharing class OpportunityStageRule implements OpportunityScoringRule
 
         if(Opp.StageName == OPP_STAGE_TO_SCORE)
         {
-            score += scoreIncrement;
+            score += SCORE_INCREMENT;
         }
 
         return score;
