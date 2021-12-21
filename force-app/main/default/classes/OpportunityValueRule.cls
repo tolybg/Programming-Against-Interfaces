@@ -1,3 +1,48 @@
-public with sharing class OpportunityValueRule 
+/****************************************************************************************************************************
+* @name OpportunityValueRule
+*
+* @description:  calculates a score of 10 if the opportunity has a value of 2.5 million or above
+*
+* @author BrightGen TC
+* @date 2021-12-01 
+* @testmethod RuleEngline_Test
+*
+* Changes:
+*****************************************************************************************************************************/
+
+public with sharing class OpportunityValueRule implements OpportunityScoringRuleIF, Comparable
 {
+    private static Opportunity_Score_Rule__c ruleConfig;
+    private static final Decimal OPP_AMOUNT_THRESHOLD = 2500000;
+    private static final Integer SCORE_INCREMENT = 10;
+
+    public Integer calculateScore(Opportunity Opp)
+    {
+        Integer score = 0;
+
+        if(Opp.Amount >= OPP_AMOUNT_THRESHOLD)
+        {
+            score += SCORE_INCREMENT;
+        }
+
+        return score;
+    }
+
+    public void setConfig(Object config)
+    {
+        if (null == ruleConfig)
+        {
+            ruleConfig = (Opportunity_Score_Rule__c) config;
+        }
+    }
+
+    public Object getConfig()
+    {
+        return (Object) ruleConfig;
+    }
+
+    public Integer compareTo(Object compareToRule)
+    {
+        return OppScoringRuleService.CompareRules(ruleConfig, compareToRule);
+    }
 }
