@@ -9,8 +9,10 @@
 *
 * Changes:
 *****************************************************************************************************************************/
-public with sharing class OpportunityValueRule implements OpportunityScoringRuleIF
+
+public with sharing class OpportunityValueRule implements OpportunityScoringRuleIF, Comparable
 {
+    private static Opportunity_Score_Rule__c ruleConfig;
     private static final Decimal OPP_AMOUNT_THRESHOLD = 2500000;
     private static final Integer SCORE_INCREMENT = 10;
 
@@ -24,5 +26,23 @@ public with sharing class OpportunityValueRule implements OpportunityScoringRule
         }
 
         return score;
+    }
+
+    public void setConfig(Object config)
+    {
+        if (null == ruleConfig)
+        {
+            ruleConfig = (Opportunity_Score_Rule__c) config;
+        }
+    }
+
+    public Object getConfig()
+    {
+        return (Object) ruleConfig;
+    }
+
+    public Integer compareTo(Object compareToRule)
+    {
+        return OppScoringRuleService.CompareRules(ruleConfig, compareToRule);
     }
 }
